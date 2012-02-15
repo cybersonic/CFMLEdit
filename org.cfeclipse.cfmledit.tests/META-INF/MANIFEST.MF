@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests
+Bundle-SymbolicName: org.cfeclipse.cfmledit.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.cfeclipse.cfmledit.tests.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.junit,
+ org.cfeclipse.cfmledit.dictionaries;bundle-version="1.0.0",
+ org.cfeclipse.cfmledit.libraries;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.jdom;version="1.1.1",
+ org.junit
