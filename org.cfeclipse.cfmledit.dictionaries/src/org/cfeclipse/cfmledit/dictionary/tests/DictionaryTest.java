@@ -2,11 +2,13 @@ package org.cfeclipse.cfmledit.dictionary.tests;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.cfeclipse.cfmledit.dictionary.Dictionary;
 import org.cfeclipse.cfmledit.dictionary.Version;
 import org.junit.Test;
 
-public class TestDictionaries {
+public class DictionaryTest {
 
 	public void startup(){
 		
@@ -15,9 +17,9 @@ public class TestDictionaries {
 	@Test
 	public void TestIsSingleton() {
 		try{
-		Dictionary dic1 = Dictionary.getInstance();
-		Dictionary dic2 = Dictionary.getInstance();
-		assertEquals(dic1, dic2);
+			Dictionary dic1 = Dictionary.getInstance();
+			Dictionary dic2 = Dictionary.getInstance();
+			assertEquals(dic1, dic2);
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -34,8 +36,8 @@ public class TestDictionaries {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
-		Version[] versions  = dic1.getVersions();
-		assertEquals(10, versions.length);
+		ArrayList<Version> versions = dic1.getVersions();
+		assertEquals(10, versions.size());
 	}
 
 }
