@@ -1,38 +1,33 @@
 package org.cfeclipse.cfmledit.dictionary;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 
 public class Version {
 	private String label = "";
 	private String key = "";
-	private Map<String, Grammar> grammars = new HashMap<String, Grammar>();
+	private ArrayList<Grammar> grammars = new ArrayList<Grammar>();
 	public Version(String key, String label) {
 		this.key = key;
 		this.label = label;
 	}
 	
 	//Load grammar
-	
 	public String toString(){
 		return "Server Version label: " + label + " key: " + key;
 	}
 
-	public Map<String, Grammar> getGrammars() {
-		return grammars;
-	}
-
-	public void setGrammars(Map<String, Grammar> grammers) {
-		this.grammars = grammers;
+	public void addGrammar(Grammar gram) {
+		grammars.add(gram);
 	}
 	
-	/**	
-	 * 
-	 * @param the key
-	 * @param path
-	 */
-	public void addGrammar(String name, String path){
-		//grammars.put(name, grammar);
+	public ArrayList<Tag> getTags(){
+		//TODO: Implement
+		return null;
+	}
+	
+	public ArrayList<Function> getFunctions(){
+		//TODO: Implement
+		return null;
 	}
 
 }

@@ -20,7 +20,7 @@ public class Dictionary {
 	public static ArrayList<Version> serverVersion = new ArrayList<Version>();
 
 	protected Dictionary() throws Exception{
-		instance.parseDictionaryConfig();
+		parseDictionaryConfig();
 	}
 	
 	public static Dictionary getInstance() throws Exception {
@@ -33,7 +33,7 @@ public class Dictionary {
 
 	private void parseDictionaryConfig() throws Exception {
 		// Get the file and set the names in the dictionaryconfig.xml
-		Bundle bundle = Platform.getBundle("org.cfeclipse.cfml.dictionaries");
+		Bundle bundle = Platform.getBundle(DictionaryPlugin.ID);
 		URL eclipsePath = FileLocator.find(bundle, new Path("dictionary/dictionaryconfig.xml"),null); 
 		URL filePath = FileLocator.toFileURL(eclipsePath);
 		
@@ -48,18 +48,18 @@ public class Dictionary {
 		for (Element vers : versions) {
 			
 			Version version = new Version(vers.getAttributeValue("key"), vers.getAttributeValue("label"));
+			List<Element> grammars = vers.getChildren();
+				for (Element gramr : grammars) {
+					Grammar gram = new Grammar(gramr.getAttributeValue("location"));
+					version.addGrammar(gram);
+				}
 				
 			serverVersion.add(version);
 		}
-		System.out.println(serverVersion);
 	}
 
-	public Version[] getVersions() {
-		
-		
-		
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Version> getVersions() {
+		return serverVersion;
 	}
 	
 	
