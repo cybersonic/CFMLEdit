@@ -20,11 +20,10 @@ import org.osgi.framework.Bundle;
 public class Grammar {
 	
 	private String location = null;
-	private Map<String, Tag> tags = new HashMap<String, Tag>();
+	private Map<String, Tag> tags = null;
 
 	public Grammar(String location) throws IOException, JDOMException {
 		this.location = location;
-		loadLocation();
 	}
 
 	public boolean loadLocation() throws IOException, JDOMException {
@@ -49,18 +48,94 @@ public class Grammar {
 		return false;
 		
 	}
+	
+	/**
+	 * Parses all the tag elements and adds them to the tags Map
+	 * <tag xmlns="http://www.cfeclipse.org/version1/dictionary" name="cfabort" single="true" xmlstyle="false">
+	<help><![CDATA[
+		Stops the processing of a CFML page at the tag location.
+		CFML returns everything that was processed before the
+		tag. The tag is often used with conditional logic to stop
+		processing a page when a condition occurs.
+	]]></help>
+	<parameter name="showerror" type="String" required="false">
+		<help><![CDATA[
+			Error to display, in a standard CFML error page,
+			when tag executes
+		]]></help>
+		<values/>
+	</parameter>
+		</tag>
 
-	private void parseTags(Element el) {
-		List<Element> tags = el.getChildren();
-		for (Element element : tags) {
+		Tag attributes: 
+			name="cfabort"
+			endtagrequired="false"
+			canHaveAttributeCollection="false"
+			allowanyattribute="true"
+			name="cfargument"
+			single="true"
+            xmlstyle="false"
+            createsScopeVar="true"
+            
+            
+            
+
+	 * @param elements
+	 * @param createsScopeVar 
+	 * @param allowanyattribute 
+	 */
+
+	private void parseTags(Element elements) {
+		this.tags = new HashMap<String, Tag>();
+		List<Element> tags = elements.getChildren();
+		for (Element el: tags) {
 			
+			String name = el.getAttributeValue("name");
+			boolean single = setFromBooleanAttribute(el, "single");
+			boolean xmlstyle = setFromBooleanAttribute(el, "xmlstyle");
+			boolean hybrid = setFromBooleanAttribute(el, "hybrid");
+			boolean anyAttribute = setFromBooleanAttribute(el, "anyAttribute");
+			boolean endtagrequired = setFromBooleanAttribute(el, "anyAttribute");
+			boolean allowanyattribute = setFromBooleanAttribute(el, "allowanyattribute");
+			boolean canHaveAttributeCollection = setFromBooleanAttribute(el, "allowanyattribute");
+			boolean createsScopeVar = setFromBooleanAttribute(el, "allowanyattribute");
+			
+			Tag item = new Tag(name,single,xmlstyle,hybrid,anyAttribute,endtagrequired,allowanyattribute,canHaveAttributeCollection,createsScopeVar);
+			this.tags.put(name, item);
 		}
-		System.out.println("Tags: " + tags.size());
 		
+	}
+	/**
+	 * Helper function to get a boolean from an {@link org.jdom.Attribute} in an {@link Element} 
+	 * @param element
+	 * @param attributeName
+	 * @return
+	 */
+	private boolean setFromBooleanAttribute(Element element, String attributeName){
+		if(element.getAttributeValue(attributeName) == null){
+			return false;
+		}
+		if(element.getAttributeValue(attributeName).equalsIgnoreCase("true")){
+			return true;
+		}
+		return false;
 	}
 	
 	public int getTagCount(){
+		if(this.tags == null){
+			return 0;
+		}
 		return this.tags.size();
+	}
+
+	public Tag getTag(String tagname) throws IOException, JDOMException {
+		
+		//Lazy Loading
+		if(this.tags == null){
+			loadLocation();
+		}
+		
+		return this.tags.get(tagname);
 	}
 	
 
