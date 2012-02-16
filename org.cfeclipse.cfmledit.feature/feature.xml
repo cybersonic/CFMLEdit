@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.cfeclipse.cfmledit.feature"
+      label="Feature"
+      version="1.0.0.qualifier"
+      provider-name="CFEclipse Project">
+
+   <description url="http://www.cfeclipse/CFEditDescription">
+      The CFEdit project is an IDE for CFML based languages
+   </description>
+
+   <copyright url="http://www.cfeclipse/CFEditCopyright">
+      &amp;copy; 2012 CFEclipse Project, Mark Drew
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="org.cfeclipse.cfmledit.dictionaries"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.cfeclipse.cfmledit.libraries"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.cfeclipse.cfmledit.wizards.project"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
