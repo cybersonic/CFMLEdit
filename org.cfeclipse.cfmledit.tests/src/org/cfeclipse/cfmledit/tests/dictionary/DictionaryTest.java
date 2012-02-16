@@ -29,18 +29,12 @@ public class DictionaryTest {
 	
 	
 	@Test
-	public void TestLoadDictionary(){
-	/*	
-		Dictionary dic1 = null;
-		try {
-			dic1 = Dictionary.getInstance();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-		ArrayList<Version> versions = dic1.getVersions();
-		assertEquals(10, versions.size());
-		*/
+	public void TestLoadDictionary() throws Exception{
+		Dictionary dict = Dictionary.getInstance();
+		ArrayList<Version> versions = dict.getVersions();
+		assertTrue(versions.size()>0);
+		
+		
 	}
 
 }

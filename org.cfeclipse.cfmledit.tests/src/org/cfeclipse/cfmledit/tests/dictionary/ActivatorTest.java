@@ -20,7 +20,7 @@ public class ActivatorTest {
 			assertNotNull(bundle);
 			URL eclipsePath = FileLocator.find(bundle, new Path("dictionary/dictionaryconfig.xml"),null); 
 			URL filePath = FileLocator.toFileURL(eclipsePath);
-			assertEquals(filePath,"file:/Users/markdrew/Dropbox/Projects/cybersonic_CFMLEdit/org.cfeclipse.cfmledit.dictionaries/dictionary/dictionaryconfig.xml");
+			assertEquals(filePath.toString(),"file:/Users/markdrew/Dropbox/Projects/cybersonic_CFMLEdit/org.cfeclipse.cfmledit.dictionaries/dictionary/dictionaryconfig.xml");
 			
 		}
 		catch(Exception e){

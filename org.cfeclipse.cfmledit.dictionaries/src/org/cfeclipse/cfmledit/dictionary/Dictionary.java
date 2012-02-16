@@ -19,10 +19,10 @@ public class Dictionary {
 	//Myself
 	public static Dictionary instance = null;
 	//Lightweight listing of server versions
-	public static ArrayList<Version> serverVersion = new ArrayList<Version>();
+	public static ArrayList<Version> versions = new ArrayList<Version>();
 
 	protected Dictionary() throws Exception{
-		parseDictionaryConfig();
+		parseDictionaryConfig(); //No need to lazy load, it's a small XML file and in theory there only will be one dictionary per plugin
 	}
 	
 	public static Dictionary getInstance() throws Exception {
@@ -59,13 +59,12 @@ public class Dictionary {
 					Grammar gram = new Grammar(gramr.getAttributeValue("location"));
 					version.addGrammar(gram);
 				}
-				
-			serverVersion.add(version);
+				this.versions.add(version);
 		}
 	}
 
-	public ArrayList<Version> getVersions() {
-		return serverVersion;
+	public ArrayList<Version> getVersions() throws Exception {
+		return versions;
 	}
 	
 	

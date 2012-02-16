@@ -11,23 +11,10 @@ public class Version {
 		this.label = label;
 	}
 	
-	//Load grammar
-	public String toString(){
-		return "Server Version label: " + label + " key: " + key;
-	}
-
 	public void addGrammar(Grammar gram) {
 		grammars.add(gram);
 	}
 	
-	public ArrayList<Tag> getTags(){
-		//TODO: Implement
-		return null;
-	}
 	
-	public ArrayList<Function> getFunctions(){
-		//TODO: Implement
-		return null;
-	}
 
 }
