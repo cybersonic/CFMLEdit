@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            canFinishEarly="true"
+            category="org.cfeclipse.cfmledit.ui.wizard.category"
+            class="org.cfeclipse.cfmledit.wizards.project.ProjectWizard"
+            descriptionImage="icons/64x64.gif"
+            finalPerspective="org.eclipse.ui.resourcePerspective"
+            icon="icons/cfeclipse_16x16.png"
+            id="org.cfeclipse.cfmledit.wizards.project.wizard1"
+            name="CFMLEdit Project"
+            project="true">
+            <description>Creates a new CFMLEdit Project</description>
+      </wizard>
+      <category
+            id="org.cfeclipse.cfmledit.ui.wizard.category"
+            name="CFMLEdit">
+      </category>
+   </extension>
+   <!--
+   <extension
+         id="org.cfeclipse.cfmledit.builders.component"
+         name="Component Metadata Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true">
+         <run
+               class="org.cfeclipse.cfmledit.ui.builder.ComponentBuilder">
+         </run>
+      </builder>
+   </extension>
+   -->
+   <extension
+         id="org.cfeclipse.cfmledit.ui.nature"
+         name="CFMLEdit Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="org.cfeclipse.cfmledit.ui.nature.Nature">
+         </run>
+      </runtime>
+      <!--
+      <builder
+            id="org.cfeclipse.cfmledit.builders.component">
+      </builder>
+      -->
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="org.cfeclipse.cfmledit.ui.wizards.project.contribution1"
+            nameFilter="*"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="org.cfeclipse.cfmledit.ui.builder.ToggleNatureAction"
+               enablesFor="+"
+               id="org.cfeclipse.cfmledit.ui.wizards.project.addRemoveNatureAction"
+               label="Add/Remove Sample Nature"
+               menubarPath="additions">
+         </action>
+      </objectContribution>
+   </extension>
+   
+   <!--
+   <extension
+         id="xmlProblem"
+         name="XML Problem"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+   -->
+
+</plugin>
