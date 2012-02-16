@@ -14,6 +14,8 @@ public class Tag {
 	protected boolean canHaveAttributeCollection = false;
 	protected boolean createsScopeVar = false;
 	
+	protected String help = "";
+	
 	
 	/**
 	 * Create a tag with all the attributes as they should be set
@@ -55,7 +57,7 @@ public class Tag {
 	}
 
 
-	public boolean isXmlstyle() {
+	public boolean isXMLStyle() {
 		return xmlstyle;
 	}
 
@@ -70,12 +72,12 @@ public class Tag {
 	}
 
 
-	public boolean isEndtagrequired() {
+	public boolean isEndTagRequired() {
 		return endtagrequired;
 	}
 
 
-	public boolean isAllowanyattribute() {
+	public boolean isAllowAnyAttribute() {
 		return allowanyattribute;
 	}
 
@@ -89,4 +91,16 @@ public class Tag {
 		return createsScopeVar;
 	}
 
+
+	public String getHelp() {
+		return help;
+	}
+
+
+	public void setHelp(String help) {
+		this.help = help;
+	}
+
+
+		
 }

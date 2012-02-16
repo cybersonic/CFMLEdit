@@ -6528,7 +6528,7 @@ The full path to a PKCS12 format file that contains the client certificate for t
        [HTML and CFML tags]
     /cfif
 -->
-        <tag name="cfif" canHaveAttributeCollection="false" single="false" endtagrequired="true"
+        <tag name="cfif" canHaveAttributeCollection="false" single="false" endtagrequired="true" 
              xmlstyle="false">
             <help><![CDATA[
         Creates simple and compound conditional statements in CFML.
