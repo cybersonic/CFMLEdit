@@ -5,7 +5,9 @@ Bundle-SymbolicName: org.cfeclipse.cfmledit.libraries
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: CFEclipse Project
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.jaxen,
+Export-Package: net.htmlparser.jericho,
+ net.htmlparser.jericho.nodoc,
+ org.jaxen,
  org.jaxen.dom,
  org.jaxen.dom4j,
  org.jaxen.expr,

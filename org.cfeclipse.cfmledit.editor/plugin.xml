@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="CFML Editor"
+            extensions="cfm, cfml"
+            icon="icons/16x16.gif"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="org.cfeclipse.cfmledit.editor.editors.CFMLEditor"
+            id="org.cfeclipse.cfmledit.editor.editors.CFMLEditor">
+      </editor>
+   </extension>
+
+</plugin>
