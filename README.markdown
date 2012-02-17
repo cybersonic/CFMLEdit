@@ -34,3 +34,8 @@ Main tab, make sure it's set as a Run an application:
 org.eclipse.ui.workbench. And the tests should run.
 
 
+Resources
+---------
+Finding resources to do Eclipse development can be hard for the beginner (and the experienced!). Most of the time it is confusing, so here are some resources we find useful:
+*	[Carlos Valcarcel]( http://cvalcarcel.wordpress.com/2009/10/11/writing-an-eclipse-plug-in-part-5-adding-icons-and-a-new-project-structure/)
+
