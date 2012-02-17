@@ -48,22 +48,6 @@
       </builder>
       -->
    </extension>
-   <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            adaptable="true"
-            id="org.cfeclipse.cfmledit.ui.wizards.project.contribution1"
-            nameFilter="*"
-            objectClass="org.eclipse.core.resources.IProject">
-         <action
-               class="org.cfeclipse.cfmledit.ui.builder.ToggleNatureAction"
-               enablesFor="+"
-               id="org.cfeclipse.cfmledit.ui.wizards.project.addRemoveNatureAction"
-               label="Add/Remove Sample Nature"
-               menubarPath="additions">
-         </action>
-      </objectContribution>
-   </extension>
    
    <!--
    <extension

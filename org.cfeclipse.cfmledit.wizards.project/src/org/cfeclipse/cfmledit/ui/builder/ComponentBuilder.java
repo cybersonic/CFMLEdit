@@ -82,7 +82,7 @@ public class ComponentBuilder extends IncrementalProjectBuilder {
 		}
 	}
 
-	public static final String BUILDER_ID = "org.cfeclipse.cfmledit.ui.wizards.project.org.cfeclipse.cfmledit.builders.component";
+	public static final String BUILDER_ID = "org.cfeclipse.cfmledit.builders.component";
 
 	private static final String MARKER_TYPE = "org.cfeclipse.cfmledit.ui.wizards.project.xmlProblem";
 

@@ -11,3 +11,6 @@ Require-Bundle: org.eclipse.ui,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: CFEclipse Project
+Export-Package: org.cfeclipse.cfmledit.ui.builder,
+ org.cfeclipse.cfmledit.ui.nature,
+ org.cfeclipse.cfmledit.wizards.project
