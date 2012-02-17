@@ -7,7 +7,9 @@ Bundle-Activator: org.cfeclipse.cfmledit.tests.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.junit,
  org.cfeclipse.cfmledit.dictionaries;bundle-version="1.0.0",
- org.cfeclipse.cfmledit.libraries;bundle-version="1.0.0"
+ org.cfeclipse.cfmledit.libraries;bundle-version="1.0.0",
+ org.cfeclipse.cfmledit.ui.wizards.project;bundle-version="1.0.0",
+ org.eclipse.core.resources;bundle-version="3.7.100"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.jdom;version="1.1.1",
